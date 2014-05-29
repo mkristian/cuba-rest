@@ -1,0 +1,1 @@
+require 'cuba_rest'

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if test 'Gemfile' -nt `dirname $0`'/load_path'; then
+   ruby `dirname $0`'/gemfile_to_bin_load_path'
+fi
+if test 'Gemfile.lock' -nt `dirname $0`'/load_path'; then
+   ruby `dirname $0`'/gemfile_to_bin_load_path'
+fi
+if test ! -e `dirname $0`'/load_path'; then
+   ruby `dirname $0`'/gemfile_to_bin_load_path'
+fi
+
+source `dirname $0`'/load_path'
+ruby -I$LOAD_PATH $@

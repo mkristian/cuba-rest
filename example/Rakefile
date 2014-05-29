@@ -1,0 +1,11 @@
+# -*- mode: ruby -*-
+
+require 'cutest'
+
+task :default => [ :cutest ]
+
+task :cutest do
+  Cutest.run Dir['test/*/*_test.rb']
+end
+
+# vim: syntax=Ruby

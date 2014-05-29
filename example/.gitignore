@@ -1,0 +1,3 @@
+bin/load_path
+Gemfile.lock
+db/*sqlite

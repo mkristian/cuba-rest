@@ -1,0 +1,33 @@
+#-*- mode: ruby -*-
+
+source 'https://rubygems.org'
+
+ruby '2.0.0' unless defined? JRUBY_VERSION
+
+DM_VERSION = '1.2.0'
+gem 'dm-aggregates',       DM_VERSION
+gem 'dm-migrations',       DM_VERSION
+gem 'dm-validations',      DM_VERSION
+gem 'dm-types',            "~> #{DM_VERSION}"
+gem 'dm-timestamps',       DM_VERSION
+gem 'dm-transactions',     DM_VERSION
+gem 'dm-sqlite-adapter',   DM_VERSION, :group => :development
+gem 'dm-postgres-adapter', DM_VERSION, :group => :production
+
+gem 'oj', '~> 2.0', :platform => :ruby # fast json parser
+gem 'jrjackson', '~> 0.2.0', :platform => :jruby # fast json parser
+
+gem 'cuba-rest', :path => '..'
+
+# for the collection classes
+gem 'virtus'
+
+group :development do
+  gem 'cutest'
+  gem 'rake'
+end
+
+gem 'ixtlan-babel', :path => '../../ixtlan-babel'
+gem 'ixtlan-datamapper', :path => '../../ixtlan-datamapper'
+
+# vim: syntax=Ruby
