@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'multi_json', '~>1.10'
   s.add_runtime_dependency 'ixtlan-babel', '~>0.7'
   s.add_runtime_dependency 'ixtlan-datamapper', '~>0.1'
-  s.add_runtime_dependency 'safe_yaml', '~>0.9'
+  s.add_runtime_dependency 'safe_yaml', '~>1.0'
 
   s.add_development_dependency 'awesome_print', '~>1.2'
   s.add_development_dependency 'rack-test', '~>0.6'
