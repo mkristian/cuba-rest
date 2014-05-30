@@ -1,5 +1,4 @@
 # -*- mode: ruby -*-
-require 'cutest'
 
 task :default => [ :example, :spec ]
 
@@ -11,6 +10,7 @@ task :example do
   if defined? JRUBY_VERSION
     warn 'cutest-cj does not work with JRUBY - unfortunately'
   else
+    require 'cutest'
     $LOAD_PATH << File.expand_path( 'lib' )
     Cutest.run Dir[ 'example/test/*/*_test.rb' ]
   end
