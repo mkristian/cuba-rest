@@ -1,8 +1,8 @@
 # cuba rest #
 
-* [![Build Status](https://secure.travis-ci.org/mkristian/ixtlan-datamapper.png)](http://travis-ci.org/mkristian/ixtlan-datamapper)
-* [![Dependency Status](https://gemnasium.com/mkristian/ixtlan-datamapper.png)](https://gemnasium.com/mkristian/ixtlan-datamapper)
-* [![Code Climate](https://codeclimate.com/mkristian/ixtlan-datamapper.png)](https://codeclimate.com/github/mkristian/ixtlan-datamapper)
+* [![Build Status](https://secure.travis-ci.org/mkristian/cuba-rest.png)](http://travis-ci.org/mkristian/cuba-rest)
+* [![Dependency Status](https://gemnasium.com/mkristian/cuba-rest.png)](https://gemnasium.com/mkristian/cuba-rest)
+* [![Code Climate](https://codeclimate.com/mkristian/cuba-rest.png)](https://codeclimate.com/github/mkristian/cuba-rest)
 
 this is a (hopefully) small collections of plugin, rack-middleware and datamapper extensions to build rest API servers with [cuba](http://github.com/soveran/cuba). most will work without datamapper - the ```Cuba::Rest::Rack::ErrorRack``` needs ```ERROR_2_STATUS``` to be setup as needed. probably the dependency to datamapper is still there.
 
