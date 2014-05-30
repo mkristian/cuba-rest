@@ -4,7 +4,8 @@ require "rack/test"
 require 'cuba/test'
 require 'awesome_print'
 
-require 'cuba_rest/rack/error_rack'
+require 'cuba/rest/rack/error_rack'
+
 # backtrace logger
 #CubaRest::Rack::Logger = CubaRest::Rack::DebugErrorLogger
 

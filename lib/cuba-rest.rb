@@ -1,1 +1,1 @@
-require 'cuba_rest'
+require 'cuba/rest'

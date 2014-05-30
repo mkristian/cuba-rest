@@ -1,6 +1,6 @@
 require_relative 'spec_helper'
-require 'cuba_rest/rack/mime_rack'
-require 'cuba_rest/rest'
+require 'cuba/rest/rack/mime_rack'
+require 'cuba/rest/plugin'
 require 'cuba'
 
 class D
@@ -28,12 +28,12 @@ class UpdateDFilter
 
 end
 
-describe CubaRest::Rest do
+describe Cuba::Rest::Plugin do
 
   before do
     Cuba.reset!
-    Cuba.use CubaRest::Rack::MimeRack
-    Cuba.plugin CubaRest::Rest
+    Cuba.use Cuba::Rest::Rack::MimeRack
+    Cuba.plugin Cuba::Rest::Plugin
     Cuba.define do
       on post do
         data = read( DFilter )

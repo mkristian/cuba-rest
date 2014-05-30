@@ -9,7 +9,7 @@ module Groups
 
         # GET ALL
         on get do
-          res.expires_in( 1440 ) # one day
+          res.browser_proxy_cache( 1440 ) # one day
           write( Group.all, :list )
         end
 
@@ -30,7 +30,7 @@ module Groups
         on get do
           if result = Group.conditional_get!( modified_since, id )
             res.last_modified( result.updated_at )
-            res.expires_in( 1440 * 365 ) # one year
+            res.browser_proxy_cache( 1440 * 365 ) # one year
             write result
           else
             res.last_modified( modified_since )

@@ -4,8 +4,6 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'ixtlan-babel', :path => '../ixtlan-babel'
-gem 'ixtlan-datamapper', :path => '../ixtlan-datamapper'
-
+gem 'copyright-header', '~>1.0', :platform => :mri, :group => :copyright
 
 # vim: syntax=Ruby

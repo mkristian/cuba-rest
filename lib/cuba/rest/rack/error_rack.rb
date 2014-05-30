@@ -18,11 +18,18 @@
 # IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+require 'cuba'
 require 'rack/request'
 require 'rack/utils'
-require 'dm-core'
-require 'ixtlan/datamapper/stale_object_exception'
-module CubaRest
+
+begin
+  require 'dm-core'
+  require 'ixtlan/datamapper/stale_object_exception'
+rescue LoadError
+  # allow not datamapper also
+end
+
+module Cuba::Rest
   module Rack
     class ErrorRack
 
@@ -41,8 +48,8 @@ module CubaRest
 
       Logger = ErrorLogger
 
-      ERROR_2_STATUS = { ::DataMapper::ObjectNotFoundError => 404, 
-        Ixtlan::DataMapper::StaleObjectException => 409 }
+      ERROR_2_STATUS = { DataMapper::ObjectNotFoundError => 404, 
+        Ixtlan::DataMapper::StaleObjectException => 409 } rescue {}
 
       def initialize( app, logger = Logger.new )
         @app = app

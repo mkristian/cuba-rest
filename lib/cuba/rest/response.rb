@@ -20,7 +20,7 @@
 #
 # -*- Coding: utf-8 -*-
 require "cuba"
-module CubaRest
+module Cuba::Rest
 
   class Response < Cuba::Response
 
@@ -51,25 +51,28 @@ module CubaRest
 
     def last_modified( last )
       if last
+        @status = 200 # for Rack::ConditionalGet
         self[ 'Last-Modified' ] = rfc2616( last )
         self[ 'Cache-Control' ] = "private, max-age=0, must-revalidate"
       end
     end
 
-    def expires_in( minutes )
+    def browser_proxy_cache( minutes )
       now = DateTime.now
       self[ 'Date' ] = rfc2616( now )
       self[ 'Expires' ] = rfc2616( now + minutes / 1440.0 )
+      self[ 'Cache-Control' ] = "public, max-age=#{minutes * 60}"
     end
     
-    def browser_only_cache
+    def browser_only_cache( minutes = 0 )
+      max = ( minutes * 60 ).to_s + (minutes == 0 ? ', must-revalidate' : '')
       self[ 'Date' ] = rfc2616
       self[ 'Expires' ] = "Fri, 01 Jan 1990 00:00:00 GMT"
-      self[ 'Cache-Control' ] = "private, max-age=0, must-revalidate"
+      self[ 'Cache-Control' ] = "private, max-age=#{max}"
     end
     
-    def browser_only_cache_no_store
-      browser_only_cache
+    def browser_only_cache_no_store( minutes = 0 )
+      browser_only_cache( minutes )
       self[ 'Cache-Control' ] += ", no-store"
     end
     

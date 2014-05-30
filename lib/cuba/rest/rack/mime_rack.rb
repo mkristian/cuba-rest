@@ -1,4 +1,5 @@
-module CubaRest
+require 'cuba'
+module Cuba::Rest
   module Rack
     class MimeRack
 

@@ -23,11 +23,10 @@ gem 'cuba-rest', :path => '..'
 gem 'virtus'
 
 group :development do
-  gem 'cutest'
+  gem 'cutest-cj'
   gem 'rake'
+  gem 'rack-test'
+  gem 'awesome_print'
 end
-
-gem 'ixtlan-babel', :path => '../../ixtlan-babel'
-gem 'ixtlan-datamapper', :path => '../../ixtlan-datamapper'
 
 # vim: syntax=Ruby

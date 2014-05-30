@@ -4,6 +4,6 @@ $LOAD_PATH << 'lib'
 
 require "root_cuba"
 
-run CubaREST
+run Cuba
 
 # vim: syntax=Ruby

@@ -1,21 +1,29 @@
 # -*- mode: ruby -*-
 Gem::Specification.new do |s|
   s.name = 'cuba-rest'
-  s.version = '0.0.1'
+  s.version = '0.1.0'
 
-  s.summary = 'optimistic find/get on model via updated_at timestamp for datamapper and activerecord'
-  s.description = s.summary
-  s.homepage = 'http://github.com/mkristian/ixtlan-optimistic'
+  s.summary = ''
+  s.description = ''
+  s.homepage = 'http://github.com/mkristian/cuba-rest'
 
   s.authors = ['mkristian']
   s.email = ['m.kristian@web.de']
 
-  # s.files = Dir['MIT-LICENSE']
-  # s.licenses << 'MIT'
-  # s.files += Dir['README.md']
-  # s.files += Dir['lib/**/*']
-  # s.files += Dir['spec/**/*']
-  # s.test_files += Dir['spec/**/*_spec.rb']
+  s.files = Dir['MIT-LICENSE']
+  s.licenses << 'MIT'
+  s.files += Dir['README.md']
+  s.files += Dir['*file']
+  s.files += Dir['*gemspec']
+  s.files += Dir['lib/**/*']
+  s.files += Dir['spec/**/*']
+  s.files += Dir['example/db/.keep']
+  s.files += Dir['example/lib/**/*']
+  s.files += Dir['example/test/**/*']
+  s.test_files += Dir['spec/**/*_spec.rb']
+  s.test_files += Dir['example/db/.keep']
+  s.test_files += Dir['example/lib/**/*']
+  s.test_files += Dir['example/test/**/*']
 
   s.add_runtime_dependency 'cuba', '~>3.1'
   s.add_runtime_dependency 'multi_json', '~>1.10'

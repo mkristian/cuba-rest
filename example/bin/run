@@ -11,4 +11,4 @@ if test ! -e `dirname $0`'/load_path'; then
 fi
 
 source `dirname $0`'/load_path'
-ruby -I$LOAD_PATH $@
+ruby -I$LOAD_PATH:lib $@

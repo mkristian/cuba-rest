@@ -1,15 +1,16 @@
 require 'ixtlan/babel/factory'
 require 'cuba'
-require 'multi_json'
 
-class Hash
-  def to_json
-    MultiJson.dump( self )
+if require 'multi_json'
+  class Hash
+    def to_json
+      MultiJson.dump( self )
+    end
   end
-end
-class Array
-  def to_json
-    MultiJson.dump( self )
+  class Array
+    def to_json
+      MultiJson.dump( self )
+    end
   end
 end
 
@@ -18,9 +19,9 @@ unless defined? YAML
   SafeYAML::OPTIONS[ :default_mode ] = :safe
 end
 
-module CubaRest
-  module Rest
+module Cuba::Rest
 
+  module Plugin
     module ClassMethods
       def factory
         @_factory ||= Ixtlan::Babel::Factory.new
@@ -41,7 +42,7 @@ module CubaRest
         res.write obj.send( "to_#{mime}" ) if obj
       else
         res.status = 406
-        res.write "can not '#{env[ 'HTTP_ACCEPT' ]}' consume"
+        res.write "can not '#{env[ 'HTTP_ACCEPT' ] || 'unknown media type'}' consume"
       end
     end
     
