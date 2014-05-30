@@ -33,7 +33,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'awesome_print', '~>1.2'
   s.add_development_dependency 'rack-test', '~>0.6'
-  s.add_development_dependency 'cutest-cj', '~>1.2'
   s.add_development_dependency 'minitest', '~>5.0'
   s.add_development_dependency 'dm-timestamps', '1.2.0'
   s.add_development_dependency 'dm-migrations', '1.2.0'

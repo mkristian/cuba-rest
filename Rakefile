@@ -8,8 +8,12 @@ task :spec do
 end
 
 task :example do
-  $LOAD_PATH << File.expand_path( 'lib' )
-  Cutest.run Dir[ 'example/test/*/*_test.rb' ]
+  if defined? JRUBY_VERSION
+    warn 'cutest-cj does not work with JRUBY - unfortunately'
+  else
+    $LOAD_PATH << File.expand_path( 'lib' )
+    Cutest.run Dir[ 'example/test/*/*_test.rb' ]
+  end
 end
 
 task :headers do
